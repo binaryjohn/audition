@@ -17,7 +17,7 @@ export default class ContactList extends Component {
         <Contact
           key={contact.id}
           id={contact.id}
-          name={contact.name}
+          contact={contact}
           {...this.props.actions} />
       )
     );
