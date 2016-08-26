@@ -13,7 +13,9 @@ export default class AddFriendInput extends Component {
     super(props, context);
 
     this.state = {
-      name: this.props.name || ''
+      first:'',
+      last:'',
+      email:''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,27 +23,46 @@ export default class AddFriendInput extends Component {
   }
 
   handleChange(e) {
-    this.setState({ name: e.target.value });
+    let nextState = {};
+    nextState[e.target.name] = e.target.value;
+    this.setState(nextState);
   }
 
   handleSubmit(e) {
-    const name = e.target.value.trim();
-    if (e.which === 13) {
-      this.props.addContact(name);
-      this.setState({ name: '' });
-    }
+    this.props.addContact(this.state);
+    this.setState({
+        first:'',
+        last:'',
+        email:'',
+    });
   }
 
   render() {
     return (
-      <input
-        type="text"
-        autoFocus="true"
-        className="form-control addFriendInput"
-        placeholder="Type the name of a friend"
-        value={this.state.name}
-        onChange={this.handleChange}
-        onKeyDown={this.handleSubmit} />
+      <div>
+        <input type="text"
+          autoFocus="true"
+          className="form-control addFriendInput"
+          placeholder="first"
+          name="first"
+          value={this.state.first}
+          onChange={this.handleChange} />
+
+        <input type="text"
+          className="form-control addFriendInput"
+          placeholder="last"
+          name="last"
+          value={this.state.last}
+          onChange={this.handleChange} />
+        <input type="text"
+          autoFocus="true"
+          className="form-control addFriendInput"
+          placeholder="email"
+          name="email"
+          value={this.state.email}
+          onChange={this.handleChange} />
+          <button type="button" onClick={this.handleSubmit}class="btn btn-primary">Add</button>
+      </div>
     );
   }
 }

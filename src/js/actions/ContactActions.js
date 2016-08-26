@@ -1,6 +1,7 @@
 import  {ADD_CONTACT, DELETE_CONTACT} from './ActionTypes';
 
 export function addContact(contact) {
+  console.log(contact)
   return {
     type: ADD_CONTACT,
     contact

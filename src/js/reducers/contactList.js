@@ -40,15 +40,19 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case type.ADD_CONTACT:
       let id = psuediGUID()
+      let name = {
+        first: action.contact.first,
+        last: action.contact.last
+      };
       return {
         ...state,
         contacts: [...state.contacts,
           {
             id,
-            name: action.contact.name,
-            email: action.contact.email,
-            occupation: action.contact.occupation,
-            age: action.contact.age
+            name,
+            email: action.contact.email
+            //occupation: action.contact.occupation,
+            //age: action.contact.age
           }
         ]
       }
