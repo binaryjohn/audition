@@ -1,4 +1,4 @@
-import * as type from '../actions/ActionsTypes';
+import * as type from '../actions/ActionTypes';
 import { assign } from 'lodash';
 
 const initialState = {
@@ -14,7 +14,7 @@ const initialState = {
     },
     {
       name: {
-        first:"Walter"
+        first:"Walter",
         last: "White"
       },
       age: 63,
@@ -37,7 +37,7 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case type.ADD_CONTACT:
     case type.DELETE_CONTACT:
-    case type.VIEW_CONTACT
+    case type.VIEW_CONTACT:
     default:
       return state
   }

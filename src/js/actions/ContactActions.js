@@ -1,4 +1,4 @@
-import * from './ActionTypes';
+import  {ADD_CONTACT, DELETE_CONTACT} from './ActionTypes';
 
 export function addContact(contact) {
   return {
