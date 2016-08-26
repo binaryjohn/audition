@@ -1,4 +1,4 @@
-
+import './ContactList.scss';
 import React, { Component, PropTypes } from 'react';
 
 import Contact from '../Contact/Contact';
@@ -6,7 +6,7 @@ import Contact from '../Contact/Contact';
 export default class ContactList extends Component {
 
   static propTypes = {
-    contact: PropTypes.array.isRequired,
+    contacts: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
   };
 
@@ -25,7 +25,7 @@ export default class ContactList extends Component {
 
   render () {
     return (
-      <ul className="friendList">
+      <ul className="contactList">
         {this.renderList()}
       </ul>
     );

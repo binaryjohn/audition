@@ -12,12 +12,13 @@ class ContactListApp extends Component {
   };
 
   render () {
-    const { contactList: { contact }, actions } = this.props;
+    const { contactList: { contacts }, actions } = this.props;
 
     return (
       <div className='contactListApp'>
         <h1>Contacts</h1>
         <ContactNew addContact={actions.addContact} />
+        <ContactList actions={actions} contacts={contacts} />
       </div>
     )
   }

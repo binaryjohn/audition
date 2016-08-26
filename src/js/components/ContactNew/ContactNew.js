@@ -1,4 +1,4 @@
-//import './AddFriendInput.scss';
+import './ContactNew.scss';
 
 import React, { Component, PropTypes } from 'react';
 
